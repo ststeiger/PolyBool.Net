@@ -28,6 +28,7 @@ namespace Polybool.Net.Objects
             return Root.Next;
         }
 
+
         public void InsertBefore(Node node, Func<Node, bool> check)
         {
             var last = Root;

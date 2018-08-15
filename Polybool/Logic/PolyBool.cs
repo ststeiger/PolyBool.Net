@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using Polybool.Net.Objects;
 
 namespace Polybool.Net.Logic
@@ -154,7 +153,11 @@ namespace Polybool.Net.Logic
                         }
 
                         // we have a closed chain!
-                        regions.Add(new Region() { Points = chain.ToList() });
+
+                        if (chain == null)
+                            throw new ArgumentNullException("chain");
+
+                        regions.Add(new Region() { Points = new List<Point>(chain) });
                         continue;
                     }
 
@@ -201,7 +204,18 @@ namespace Polybool.Net.Logic
                         // tail ---head---> head2
                         chain2.Shift();
                     }
-                    chains[index1] = chain1.Concat(chain2).ToList();
+
+
+                    if (chain1 == null)
+                        throw new ArgumentNullException(nameof(chain1));
+
+                    if (chain2 == null)
+                        throw new ArgumentNullException(nameof(chain2));
+
+                    List<Point> ls = new List<Point>(chain1);
+                    ls.AddRange(chain2);
+
+                    chains[index1] = ls;
                     chains.Splice(index2, 1);
                 };
 

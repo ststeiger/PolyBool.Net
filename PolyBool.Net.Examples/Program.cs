@@ -1,19 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using Polybool.Net.Logic;
+﻿
 using Polybool.Net.Objects;
+
+// https://github.com/voidqk/polybooljs
+// https://github.com/idormenco/PolyBool.Net
 
 namespace PolyBool.Net.Examples
 {
+
+
     internal class Program
     {
-        private static void Main()
+
+
+        private static void Main(string[] args)
         {
-            var poly1 = new Polygon
+            Polygon poly1 = new Polygon
             {
-                Regions = new List<Region>
+                Regions = new System.Collections.Generic.List<Region>
                 { new Region{
-                    Points = new List<Point>
+                    Points = new System.Collections.Generic.List<Point>
                         {
                             new Point(200L,50L),
                             new Point(600L,50L),
@@ -24,11 +29,11 @@ namespace PolyBool.Net.Examples
 
                 }
             };
-            var poly2 = new Polygon
+            Polygon poly2 = new Polygon
             {
-                Regions = new List<Region>
+                Regions = new System.Collections.Generic.List<Region>
                 { new Region{
-                    Points = new List<Point>
+                    Points = new System.Collections.Generic.List<Point>
                         {
                             new Point(300L,150L),
                             new Point(500L,90L),
@@ -39,12 +44,18 @@ namespace PolyBool.Net.Examples
 
                 }
             };
-            var seg1 = Polybool.Net.Logic.PolyBool.Segments(poly1);
-            var seg2 = Polybool.Net.Logic.PolyBool.Segments(poly2);
-            var comb = Polybool.Net.Logic.PolyBool.Combine(seg1, seg2);
-            var seg3 = SegmentSelector.Difference(comb);
-            var pol = Polybool.Net.Logic.PolyBool.Polygon(seg3);
-            Console.WriteLine(pol);
+
+
+            PolySegments seg1 = Polybool.Net.Logic.PolyBool.Segments(poly1);
+            PolySegments seg2 = Polybool.Net.Logic.PolyBool.Segments(poly2);
+            CombinedPolySegments comb = Polybool.Net.Logic.PolyBool.Combine(seg1, seg2);
+            PolySegments seg3 = Polybool.Net.Logic.SegmentSelector.Difference(comb);
+            PolySegments seg4 = Polybool.Net.Logic.SegmentSelector.Union(comb);
+
+            Polygon polDiff = Polybool.Net.Logic.PolyBool.Polygon(seg3);
+            Polygon polUn = Polybool.Net.Logic.PolyBool.Polygon(seg4);
+            
+            System.Console.WriteLine("Diff:{0} Union:{1}", polDiff, polUn);
         }
     }
 }

@@ -1,13 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polybool.Net", "Polybool.Net\Polybool.Net.csproj", "{5FB7C719-BA44-48DA-8384-1796A5CF3FF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolyBool.Net.Examples", "PolyBool.Net.Examples\PolyBool.Net.Examples.csproj", "{673E2268-9BB0-4E9C-9948-395B80CFB5C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polybool.NetStandard", "Polybool.NetStandard\Polybool.NetStandard.csproj", "{76BD316B-A6BF-4665-A43D-203238275000}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Polybool", "Polybool\Polybool.shproj", "{335CB5D9-FF0F-4623-8A76-FEA665CE97E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polybool.Net2", "Polybool.Net2\Polybool.Net2.csproj", "{F3F4186D-AE5B-43E9-BF2A-E62950E417E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polybool.NetCore.Examples", "Polybool.NetCore.Examples\Polybool.NetCore.Examples.csproj", "{79B22E43-3FCE-4AD1-BB7F-9FBE7AE774C2}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Polybool\Polybool.projitems*{335cb5d9-ff0f-4623-8a76-fea665ce97e0}*SharedItemsImports = 13
+		Polybool\Polybool.projitems*{5fb7c719-ba44-48da-8384-1796a5cf3ff6}*SharedItemsImports = 4
+		Polybool\Polybool.projitems*{f3f4186d-ae5b-43e9-bf2a-e62950e417e0}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -21,8 +34,23 @@ Global
 		{673E2268-9BB0-4E9C-9948-395B80CFB5C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{673E2268-9BB0-4E9C-9948-395B80CFB5C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{673E2268-9BB0-4E9C-9948-395B80CFB5C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76BD316B-A6BF-4665-A43D-203238275000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76BD316B-A6BF-4665-A43D-203238275000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76BD316B-A6BF-4665-A43D-203238275000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76BD316B-A6BF-4665-A43D-203238275000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3F4186D-AE5B-43E9-BF2A-E62950E417E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3F4186D-AE5B-43E9-BF2A-E62950E417E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3F4186D-AE5B-43E9-BF2A-E62950E417E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3F4186D-AE5B-43E9-BF2A-E62950E417E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79B22E43-3FCE-4AD1-BB7F-9FBE7AE774C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79B22E43-3FCE-4AD1-BB7F-9FBE7AE774C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79B22E43-3FCE-4AD1-BB7F-9FBE7AE774C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79B22E43-3FCE-4AD1-BB7F-9FBE7AE774C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BDD4161B-C79D-46F8-A957-BADA340CB49C}
 	EndGlobalSection
 EndGlobal
